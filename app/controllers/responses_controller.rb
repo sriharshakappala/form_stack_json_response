@@ -1,9 +1,13 @@
 class ResponsesController < ApplicationController
+	skip_before_filter :verify_authenticity_token
+	respond_to :json
+
 	def index
 	end
 	def get_data
-		Response.create(:json_string => params)
-		Response.create(:json_string => request.raw_post)
-		redirect_to responses_path
+		# Response.create(:json_string => params)
+		# Response.create(:json_string => request.raw_post)
+		# redirect_to responses_path
+		render json: { message: "#{request.raw_post}" }
 	end
 end

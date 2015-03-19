@@ -8,6 +8,7 @@ class ResponsesController < ApplicationController
 		# Response.create(:json_string => params)
 		# Response.create(:json_string => request.raw_post)
 		# redirect_to responses_path
+		logger.debug request.raw_post
 		render json: { message: "#{request.raw_post}" }
 	end
 end

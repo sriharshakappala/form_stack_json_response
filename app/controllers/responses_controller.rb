@@ -5,9 +5,6 @@ class ResponsesController < ApplicationController
 	def index
 	end
 	def get_data
-		# Response.create(:json_string => params)
-		# Response.create(:json_string => request.raw_post)
-		# redirect_to responses_path
 		logger.debug request.raw_post
 		Response.create(:json_string => request.raw_post)
 		Fone.create(:json_string => request.raw_post)

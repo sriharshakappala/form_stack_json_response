@@ -2,6 +2,6 @@ class ResponsesController < ApplicationController
 	def index
 	end
 	def get_data
-		binding.pry
+		Response.create(:json_string => params)
 	end
 end

@@ -3,6 +3,7 @@ class ResponsesController < ApplicationController
 	respond_to :json
 
 	def index
+		CustomerMailer.send_confirmation_mailer("harsha.vakilsearch@gmail.com").deliver_now
 	end
 	def get_data
 		logger.debug request.raw_post

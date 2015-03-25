@@ -5,6 +5,8 @@ class ResponsesController < ApplicationController
 	def index
 		CustomerMailer.send_confirmation_mailer("harsha.vakilsearch@gmail.com").deliver_now
 	end
+	def submit_docs
+	end
 	def get_data
 		logger.debug request.raw_post
 		Fone.create(:json_string => request.raw_post)

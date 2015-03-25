@@ -7,7 +7,6 @@ class ResponsesController < ApplicationController
 	end
 	def get_data
 		logger.debug request.raw_post
-		Response.create(:json_string => request.raw_post)
 		Fone.create(:json_string => request.raw_post)
 		render json: { message: "#{request.raw_post}" }
 	end
